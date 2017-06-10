@@ -31,8 +31,9 @@ class CreateBanksTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('bank_id');
             $table->string('full_name');
-            $table->json('short_name');
-            $table->json('bic');
+            $table->string('short_name');
+            $table->string('bic');
+            $table->string('website');
             $table->timestamps();
         });
     }

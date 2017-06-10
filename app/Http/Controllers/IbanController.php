@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Iban;
+use App\Services\BOC;
 use Illuminate\Http\Request;
 
 class IbanController extends Controller
@@ -14,7 +15,8 @@ class IbanController extends Controller
      */
     public function index()
     {
-        //
+        $boc = new BOC();
+        return $boc->getAccounts();
     }
 
     /**

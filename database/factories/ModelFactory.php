@@ -35,9 +35,20 @@ $factory->define(App\Bank::class, function (Faker\Generator $faker) {
      * */
 
     return [
+        'user_id' => factory(\App\User::class)->create()->id,
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
 });
+
+/*
+    $table->integer('user_id');
+    $table->integer('bank_id');
+    $table->string('bank_bic');
+    $table->string('account_number');
+    $table->string('iban_number');
+    $table->string('label');
+
+ */

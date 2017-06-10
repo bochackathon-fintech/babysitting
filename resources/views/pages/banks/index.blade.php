@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -11,11 +12,11 @@
                         <div class="panel-body">
                             You seem to be having Banks :)
                         </div>
-                    @else
+                        @else
                         <div class="panel-body">
                             You Dont Seem to have any Banks Connected to your account. <br>
 
-                            <a href="/ibans" class="btn btn-success">Connect to Bank</a>
+                            <a href="/banks/create" class="btn btn-success">Create Bank</a>
                         </div>
                     @endif
 

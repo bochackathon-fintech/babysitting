@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/banks','BankController')->name('bank');
-Route::resource('/ibans','ibanController')->name('iban');
+Route::resource('/banks','BankController');
+Route::resource('/ibans','IbanController');

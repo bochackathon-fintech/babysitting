@@ -17,8 +17,8 @@ class CreateIbansTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('bank_id');
+            $table->string('bank_bic');
             $table->string('account_number');
-            $table->string('bic_number');
             $table->string('iban_number');
             $table->string('label');
             $table->timestamps();
