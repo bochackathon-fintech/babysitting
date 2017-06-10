@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\UTrust;
+
 class BOC
 {
 
@@ -33,7 +35,6 @@ class BOC
 
         $accounts = json_decode((string) $response->getBody(), JSON_PRETTY_PRINT);
 
-        $accountInfo = [];
         $results = [];
         foreach ($accounts['accounts'] as $index => $account) {
             $acc = [
@@ -48,13 +49,13 @@ class BOC
                 'account_number'   => $accInfo['number'],
                 'iban_number'      => $accInfo['IBAN'],
                 'bank_id'          => $accInfo['bank_id'],
+                'bic_number'       => UTrust::getBanks()[0]['bic'],
                 'balance_amount'   => $accInfo['balance']['amount'],
                 'balance_currency' => $accInfo['balance']['currency'],
             ];
-            var_dump($accInfo);
         }
 
-        return $results;
+        return collect($results);
     }
 
     public function getAccount(array $info)

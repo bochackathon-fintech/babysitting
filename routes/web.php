@@ -21,3 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/banks','BankController');
 Route::resource('/ibans','IbanController');
+
+Route::get('/iban/{iban}','IbanVerificationController@get');
+Route::get('/iban//verify/{iban}','IbanVerificationController@verify');
+
+
+Route::get('/profile',function(){
+    return view('pages.tokens.index');
+});

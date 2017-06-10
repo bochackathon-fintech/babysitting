@@ -12,15 +12,15 @@ class UTrust
             "full_name"  => "ΤΡΑΠΕΖΑ ΚΥΠΡΟΥ (001)",
             "short_name" => "(+357) 2212 8000",
             "bank_id"    => "bda8eb884efcef7082792d45",
-            "api"        => "http://api.bocapi.net"
+            "api"        => "http://api.bocapi.net/v1/api/"
         ],
         [
-            "website"    => "www.bankofcyprus.com",
-            "bic"        => "BCYPCY2N",
-            "full_name"  => "ΤΡΑΠΕΖΑ ΚΥΠΡΟΥ (001)",
+            "website"    => "www.anotherbank.com",
+            "bic"        => "BCYPCY2N02",
+            "full_name"  => "Another Bank (002)",
             "short_name" => "(+357) 2212 8000",
             "bank_id"    => "bda8eb884efcef7082792d45",
-            "api"        => "http://api.bocapi.net"
+            "api"        => "http://api.bocapi.net/v1/api/"
         ]
 
 

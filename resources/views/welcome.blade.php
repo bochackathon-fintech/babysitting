@@ -79,16 +79,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    UTRUST.IT
                 </div>
-
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <input placeholder="               type IBAN to verify" type="text" style="font-size:30px; font-weight: 100; width: 100%;height: 50px;">
                 </div>
+                <h4 class="links">Public IBAN Repository & Verification</h4>
+
             </div>
         </div>
     </body>

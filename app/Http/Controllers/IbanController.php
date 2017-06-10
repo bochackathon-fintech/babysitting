@@ -8,15 +8,26 @@ use Illuminate\Http\Request;
 
 class IbanController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $boc = new BOC();
-        return $boc->getAccounts();
+        $boc_ibans = $boc->getAccounts();
+        return $boc_ibans;
+        $ibans = $request->user()->ibans;
+
+        return view('pages.ibans.index', ['published_ibans' => $ibans, 'unpublished_ibans' => $boc_ibans]);
+
     }
 
     /**
@@ -26,13 +37,14 @@ class IbanController extends Controller
      */
     public function create()
     {
-        //
+        // Create the Batch of accounts
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,7 +55,7 @@ class IbanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Iban  $iban
+     * @param  \App\Iban $iban
      * @return \Illuminate\Http\Response
      */
     public function show(Iban $iban)
@@ -54,7 +66,7 @@ class IbanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Iban  $iban
+     * @param  \App\Iban $iban
      * @return \Illuminate\Http\Response
      */
     public function edit(Iban $iban)
@@ -65,8 +77,8 @@ class IbanController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Iban  $iban
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Iban $iban
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Iban $iban)
@@ -77,7 +89,7 @@ class IbanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Iban  $iban
+     * @param  \App\Iban $iban
      * @return \Illuminate\Http\Response
      */
     public function destroy(Iban $iban)
