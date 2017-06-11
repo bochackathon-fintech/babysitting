@@ -5,23 +5,31 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+
+
                 <div class="panel panel-default">
-                    <div class="panel-heading">Your Banks</div>
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Bank of Cyprus - IBAN's</div>
+                    <div class="panel-body">
+                        <p>This is your personal accounts. you can click publish to make the IBAN available publicly</p>
+                    </div>
 
-                    @if($published_ibans->count() === 0)
-                        <div class="panel-body">
-                            You dont have any published ibans
-                        </div>
-                    @else
-                        <div class="panel-body">
-                            You Dont Seem to have any Banks Connected to your account. <br>
+                    <!-- List group -->
+                    <ul class="list-group">
+                        @foreach($unpublished_ibans as $ib)
+                            <div>
+                                <div class="list-group-item"><span class="label label-danger">iban</span> {{ $ib['iban_number'] }}
+                                    <span class="pull-right">
+                                        <a class="btn btn-sm btn-success"
+                                           href="{{ url('iban/publish/' . $ib['iban_number']) }}"
+                                           role="button">Publish</a>
+                                    </span>
+                                    <h4><span class="label label-success">label</span>{{ $ib['label'] }}</h4>
+                                </div>
 
-                            <a href="/banks/create" class="btn btn-success">Create Bank</a>
-                        </div>
-                    @endif
-
-                    {{--@if($unpublished_ibans)--}}
-
+                            </div>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>

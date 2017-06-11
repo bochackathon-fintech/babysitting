@@ -16,11 +16,12 @@ class CreateIbansTable extends Migration
         Schema::create('ibans', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('bank_id');
             $table->string('bank_bic');
             $table->string('account_number');
             $table->string('iban_number');
             $table->string('label');
+            $table->string('display');
+            $table->boolean('default')->default(true);
             $table->timestamps();
         });
     }

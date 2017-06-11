@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>UTRUST.IT</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -82,11 +82,22 @@
                     UTRUST.IT
                 </div>
                 <div class="links">
+                    {{--<script language="javascript" src="https://www.iban.com/remote/default.js"></script>--}}
+                    {{--<div id="ibanvalidation" >--}}
+                        {{--<input type="text" placeholder="IBAN to check..." id="ibant3st" >--}}
+                        {{--<input type='button' id='9fau8b43f9' value='Check' >--}}
+                        {{--<p><span id="IBANresult"></span></p>--}}
+                        {{--<p id="p05w34r">Powered by <a href="https://www.iban.com/">IBAN</a>.com<br></p>--}}
+                    {{--</div>--}}
+
                     <input placeholder="               type IBAN to verify" type="text" style="font-size:30px; font-weight: 100; width: 100%;height: 50px;">
+                    <button class="btn btn-info">Check</button>
                 </div>
                 <h4 class="links">Public IBAN Repository & Verification</h4>
 
             </div>
         </div>
+        <script src="{{ asset('js/app.js') }}"></script>
+
     </body>
 </html>

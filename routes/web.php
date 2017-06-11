@@ -19,13 +19,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/client','ClientController@index')->name('client');
+Route::get('/client/invoice','ClientController@invoice')->name('invoice');
+
+
 Route::resource('/banks','BankController');
 Route::resource('/ibans','IbanController');
 
-Route::get('/iban/{iban}','IbanVerificationController@get');
+Route::get('/iban/publish/{ib}','IbanVerificationController@publish');
 Route::get('/iban//verify/{iban}','IbanVerificationController@verify');
+
+Route::get('/iban/{iban}','IbanVerificationController@get');
+
+
 
 
 Route::get('/profile',function(){
     return view('pages.tokens.index');
 });
+
+
+Route::get('/company/{country}/{key}', 'IbanVerificationController@company');

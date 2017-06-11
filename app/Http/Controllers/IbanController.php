@@ -9,9 +9,15 @@ use Illuminate\Http\Request;
 class IbanController extends Controller
 {
 
-    public function __construct()
+    /**
+     * @var BOC
+     */
+    private $boc;
+
+    public function __construct(BOC $boc)
     {
         $this->middleware('auth');
+        $this->boc = $boc;
     }
 
     /**
@@ -21,12 +27,15 @@ class IbanController extends Controller
      */
     public function index(Request $request)
     {
-        $boc = new BOC();
-        $boc_ibans = $boc->getAccounts();
-        return $boc_ibans;
+
+        $boc_ibans = $this->boc->getAccounts();
+
         $ibans = $request->user()->ibans;
 
-        return view('pages.ibans.index', ['published_ibans' => $ibans, 'unpublished_ibans' => $boc_ibans]);
+        return view('pages.ibans.index', [
+            'published_ibans'   => $ibans,
+            'unpublished_ibans' => $boc_ibans
+        ]);
 
     }
 
@@ -60,7 +69,17 @@ class IbanController extends Controller
      */
     public function show(Iban $iban)
     {
-        //
+        $result = [];
+        if ($iban) {
+            $u = $iban->user();
+            $result = [
+                'iban' => $iban->getAttributeValue('iban_number'),
+                'bic'  => $iban->getAttributeValue('bank_bic'),
+                'user' => $iban->user,
+            ];
+        }
+
+        return view('pages.ibans.show', ['result' => $result]);
     }
 
     /**
@@ -95,5 +114,15 @@ class IbanController extends Controller
     public function destroy(Iban $iban)
     {
         //
+    }
+
+    public function get(Request $request, $iban)
+    {
+
+    }
+
+    public function getUserIban(Request $request, $iban)
+    {
+
     }
 }

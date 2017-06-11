@@ -41,7 +41,7 @@
 
 </head>
 <body>
-<div id="app">
+<div id="app" style="background-color: #2e3436;">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">

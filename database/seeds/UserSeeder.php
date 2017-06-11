@@ -18,12 +18,13 @@ class UserSeeder extends Seeder
 
             \App\User::create([
                 'name'           => $user,
+                'identifier'     => uniqid('id-', false),
                 'email'          => "{$user}@utrust.it",
                 'password'       => bcrypt($user),
                 'remember_token' => str_random(10),
                 'auth_provider'  => $provider['auth'],
-                'auth_id'  => $provider['id'],
-                'group_id'  => $provider['group_id'],
+                'auth_id'        => $provider['id'],
+                'group_id'       => $provider['group_id'],
 
             ]);
         }

@@ -7,7 +7,7 @@ use App\UTrust;
 class BOC
 {
 
-    private $subscription_key = '9a3aba04ed4b4ad2a49c58ee0088f883';
+    private $subscription_key = 'b7b441bb960842cea0a78b6a3b656800';
 
     private $bank_key = 'bda8eb884efcef7082792d45';
 

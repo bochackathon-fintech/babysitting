@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/iban/{id}',function(){
+
+
+});
+
+Route::middleware('auth:api')->get('/iban/verify/{iban}','IbanVerificationController@verify');
+Route::middleware('auth:api')->get('/iban/publish/{iban}','IbanVerificationController@verify');
+Route::middleware('auth:api')->get('/user/iban/{uid}','IbanController@getUserIban');

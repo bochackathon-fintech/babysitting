@@ -13,9 +13,9 @@
                         </div>
                     @else
                         <div class="panel-body">
-                            You Dont Seem to have any Banks Connected to your account. <br>
+                            You Don't Seem to have any Banks Connected to your account. <br>
 
-                            <a href="/ibans" class="btn btn-success">Connect to Bank</a>
+                            <a href="/ibans" class="btn btn-success">Connect to Bank of Cyprus</a>
                         </div>
                     @endif
 
