@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4">
                             <div class="receipt-left">
-                                <h1>Receipt</h1>
+                                <h1><a href="" class="btn btn-info btn-block">PAY Invoice</a></h1>
                             </div>
                         </div>
                     </div>

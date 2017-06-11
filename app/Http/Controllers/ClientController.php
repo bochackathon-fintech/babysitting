@@ -15,4 +15,8 @@ class ClientController extends Controller
     public function invoice(){
         return view('pages.client.invoice');
     }
+
+    public function module(){
+        return view('pages.client.index');
+    }
 }

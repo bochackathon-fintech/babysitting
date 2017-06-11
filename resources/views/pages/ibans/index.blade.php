@@ -14,20 +14,45 @@
                         <p>This is your personal accounts. you can click publish to make the IBAN available publicly</p>
                     </div>
 
+
                     <!-- List group -->
                     <ul class="list-group">
+                        @php
+                            $ibans = $published_ibans->keyBy('iban_number')
+                        @endphp
+
                         @foreach($unpublished_ibans as $ib)
-                            <div>
-                                <div class="list-group-item"><span class="label label-danger">iban</span> {{ $ib['iban_number'] }}
-                                    <span class="pull-right">
+                            {{--{{ dd($ibans) }}--}}
+                            @if($ibans->has($ib['iban_number']))
+
+                                <div>
+                                    <div class="list-group-item"><h3><span
+                                                    class="label label-danger">iban</span>{{ $ib['iban_number']  }} </h3>
+                                        <span class="pull-right">
+                                        <a class="btn btn-sm btn-warning"
+                                           href="{{ url('iban/publish/' . $ib['iban_number']) }}"
+                                           role="button">un Publish</a>
+                                    </span>
+                                        <h4><span class="label label-success">label</span>{{ $ib['label'] }}</h4>
+                                    </div>
+
+                                </div>
+                            @else
+
+                                <div>
+                                    <div class="list-group-item"><h3><span
+                                                    class="label label-danger">iban</span>{{ $ib['iban_number']  }} </h3>
+                                        <span class="pull-right">
                                         <a class="btn btn-sm btn-success"
                                            href="{{ url('iban/publish/' . $ib['iban_number']) }}"
                                            role="button">Publish</a>
                                     </span>
-                                    <h4><span class="label label-success">label</span>{{ $ib['label'] }}</h4>
-                                </div>
+                                        <h4><span class="label label-success">label</span>{{ $ib['label'] }}</h4>
+                                    </div>
 
-                            </div>
+                                </div>
+                            @endif
+
                         @endforeach
                     </ul>
                 </div>

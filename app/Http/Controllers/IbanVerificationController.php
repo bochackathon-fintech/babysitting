@@ -42,7 +42,9 @@ class IbanVerificationController extends Controller
      */
     public function verify(Request $request, SEPA $sepa, $iban)
     {
-        return $sepa->verify($iban);
+        $result = $sepa->verify($iban);
+
+        return view('pages.ibans.verify', ['results' => $result]);
     }
 
     public function publish(Request $request, $ib)
@@ -70,8 +72,8 @@ class IbanVerificationController extends Controller
 
     public function company(Request $request, OC $oc, $country, $key)
     {
-        $result =  $oc->getCompany($country,$key);
+        $result = $oc->getCompany($country, $key);
 
-        return view('pages.client.company',['results' => $result]);
+        return view('pages.client.company', ['results' => $result]);
     }
 }

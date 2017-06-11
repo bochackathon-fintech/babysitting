@@ -12,6 +12,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <h4>Invoices needed to pay today (900)</h4>
+                            <p><a href="" class="btn btn-info ">PAY All Verified Invoices</a></p>
                             <div class="pull-right" style="margin-bottom: 20px;">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-success btn-filter" data-target="paid">Paid</button>
@@ -159,7 +160,7 @@
                                                     <span class="media-meta pull-right">March 13, 2017</span>
                                                     <h4 class="title">
                                                         3el
-                                                        <p class="alert alert-info">The information is wrong... <a href="/verify/cy/HE171923">read more</a></p>
+                                                        <p class="alert alert-info">The information is wrong... <a href="/company/cy/HE171923">read more</a></p>
                                                         <span class="pull-right unpaid">unpaid</span>
                                                     </h4>
                                                     <p class="summary"><a href="/verify/cy">Cutomer User0</a> Amount: 100,000,000 &euro; <span class="label label-success"> Verified</span></p>
